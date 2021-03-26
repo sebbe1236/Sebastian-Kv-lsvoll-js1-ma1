@@ -70,7 +70,7 @@ resultsContainer.innerHTML = "<p>New paragraph</p>";
 //Create a function that has one parameter called list.
 //Inside the function, loop through the list parameter and console log the name property in each object.
 //Call the function and pass in the cats variable in the script.js file in the repo.
-//potensielt feil
+
 function Listing(list) {
   for (let i = 0; i < list.length; i++) {
     console.log(list[i].name);
@@ -87,3 +87,25 @@ Listing(cats);
 //Return the HTML from the function.
 //Call the function and pass in the cats array as the argument.
 //Assign the return value of the function to the innerHTML property of the element on the HTML page with a class of cat-container.
+
+function createCats(cats) {
+  let catsHtml = "";
+
+  for (let i = 0; i < cats.length; i++) {
+    //if (age) {
+    //return "age unkown";
+    //}
+    catsHtml += `<div>
+  <h5>${cats[i].name}</h5>
+  <p>${cats[i].age}</p>
+  </div>
+  `;
+  }
+  return catsHtml;
+}
+
+const createHtml = createCats(cats);
+
+const catContainer = document.querySelector(".cat-container");
+
+catContainer.innerHTML = createHtml;
