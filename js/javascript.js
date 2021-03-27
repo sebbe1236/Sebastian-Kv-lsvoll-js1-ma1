@@ -88,19 +88,21 @@ Listing(cats);
 //Call the function and pass in the cats array as the argument.
 //Assign the return value of the function to the innerHTML property of the element on the HTML page with a class of cat-container.
 
-function createCats(cats) {
-  let catsHtml = "";
+let catsHtml = "";
 
+function createCats(cats) {
   for (let i = 0; i < cats.length; i++) {
-    //if (age) {
-    //return "age unkown";
-    //}
+    let age = "Age unknown";
+    if (cats[i].age !== undefined) {
+      age = cats[i].age;
+    }
+
     catsHtml += `<div>
-  <h5>${cats[i].name}</h5>
-  <p>${cats[i].age}</p>
-  </div>
-  `;
+    <h5>${cats[i].name}</h5>
+    <p>${age}</p>
+    </div>`;
   }
+
   return catsHtml;
 }
 
